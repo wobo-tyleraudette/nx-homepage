@@ -1,6 +1,8 @@
 {
   "version": 2,
   "projects": {
-    "api": "apps/api"
+    "api-nest": "apps/api-nest",
+    "canvas-react-e2e": "apps/canvas-react-e2e",
+    "webapp-react": "apps/webapp-react"
   }
 }
