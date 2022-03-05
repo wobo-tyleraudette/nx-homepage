@@ -22,6 +22,6 @@ describe('App', () => {
       </BrowserRouter>
     );
 
-    expect(getByText(/Welcome canvas-react/gi)).toBeTruthy();
+    expect(getByText(/Welcome webapp-react/gi)).toBeTruthy();
   });
 });

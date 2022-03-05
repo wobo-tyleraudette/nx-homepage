@@ -1,6 +1,6 @@
 import { getGreeting } from '../support/app.po';
 
-describe('canvas-react', () => {
+describe('webapp-react', () => {
   beforeEach(() => cy.visit('/'));
 
   it('should display welcome message', () => {
@@ -8,6 +8,6 @@ describe('canvas-react', () => {
     cy.login('my-email@something.com', 'myPassword');
 
     // Function helper example, see `../support/app.po.ts` file
-    getGreeting().contains('Welcome canvas-react');
+    getGreeting().contains('Welcome webapp-react');
   });
 });

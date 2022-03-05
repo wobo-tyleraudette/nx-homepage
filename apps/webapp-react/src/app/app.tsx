@@ -6,18 +6,19 @@ import { Route, Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 
 export function App() {
-  const [demo, setdemo] = useState<any>([]);
+  const [demo, setdemo] = useState<string>();
 
   useEffect(() => {
     fetch('/api/demo')
       .then((t) => t.json())
       .then(setdemo);
   }, []);
+
   return (
     <>
-      <NxWelcome title="canvas-react" />
+      <NxWelcome title="webapp-react" />
       <div />
-      {demo.d}
+      {demo}
 
       {/* START: routes */}
       {/* These routes and navigation have been generated for you */}

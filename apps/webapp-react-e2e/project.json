@@ -1,12 +1,12 @@
 {
-  "root": "apps/canvas-react-e2e",
-  "sourceRoot": "apps/canvas-react-e2e/src",
+  "root": "apps/webapp-react-e2e",
+  "sourceRoot": "apps/webapp-react-e2e/src",
   "projectType": "application",
   "targets": {
     "e2e": {
       "executor": "@nrwl/cypress:cypress",
       "options": {
-        "cypressConfig": "apps/canvas-react-e2e/cypress.json",
+        "cypressConfig": "apps/webapp-react-e2e/cypress.json",
         "devServerTarget": "webapp-react:serve"
       },
       "configurations": {
@@ -19,7 +19,7 @@
       "executor": "@nrwl/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["apps/canvas-react-e2e/**/*.{js,ts}"]
+        "lintFilePatterns": ["apps/webapp-react-e2e/**/*.{js,ts}"]
       }
     }
   },
