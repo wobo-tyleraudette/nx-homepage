@@ -29,7 +29,7 @@
       }
     ]
   },
-  "defaultProject": "api-nest",
+  "defaultProject": "webapp-react",
   "generators": {
     "@nrwl/react": {
       "application": {
