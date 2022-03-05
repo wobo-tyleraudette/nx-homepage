@@ -1,5 +1,5 @@
 {
-  "npmScope": "homepage",
+  "npmScope": "nx-homepage",
   "affected": {
     "defaultBase": "main"
   },
@@ -29,5 +29,21 @@
       }
     ]
   },
-  "defaultProject": "api"
+  "defaultProject": "webapp-react",
+  "generators": {
+    "@nrwl/react": {
+      "application": {
+        "style": "scss",
+        "linter": "eslint",
+        "babel": true
+      },
+      "component": {
+        "style": "scss"
+      },
+      "library": {
+        "style": "scss",
+        "linter": "eslint"
+      }
+    }
+  }
 }

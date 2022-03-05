@@ -1,6 +1,8 @@
 {
   "version": 2,
   "projects": {
-    "api": "apps/api"
+    "api-nest": "apps/api-nest",
+    "webapp-react": "apps/webapp-react",
+    "webapp-react-e2e": "apps/webapp-react-e2e"
   }
 }
