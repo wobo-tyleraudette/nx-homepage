@@ -1,5 +1,5 @@
 {
-  "npmScope": "homepage",
+  "npmScope": "nx-homepage",
   "affected": {
     "defaultBase": "main"
   },

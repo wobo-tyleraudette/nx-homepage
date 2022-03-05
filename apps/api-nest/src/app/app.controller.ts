@@ -12,10 +12,7 @@ export class AppController {
 
   @Get()
   getData() {
-    return {
-      app: this.appService.getData(),
-      demo: this.demoService.getDemo(),
-    };
+    return this.appService.getData();
   }
 
   @Get('/demo')
