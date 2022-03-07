@@ -94,7 +94,7 @@ export const userReducer = userSlice.reducer;
  *
  * See: https://react-redux.js.org/next/api/hooks#usedispatch
  */
-export const userActions = { fetchUser, ...userSlice.actions };
+export const userActions = { fetchUser };
 
 /*
  * Export selectors to query state. For use with the `useSelector` hook.

@@ -4,7 +4,7 @@ import NxWelcome from './nx-welcome';
 
 import { Route, Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import { UserContainer } from '@nx-homepage/ui';
+import { User } from '@nx-homepage/ui';
 import { Provider } from 'react-redux';
 import { rootStore } from '@nx-homepage/store';
 
@@ -20,7 +20,7 @@ export function App() {
     <Provider store={rootStore}>
       <NxWelcome title="webapp-react" message={demo.message} />
       <div />
-      <UserContainer />
+      <User />
 
       {/* START: routes */}
       {/* These routes and navigation have been generated for you */}

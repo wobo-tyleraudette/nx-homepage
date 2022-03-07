@@ -1,17 +1,20 @@
+import { userActions } from '@nx-homepage/store';
 import { useEffect } from 'react';
-import { connect } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { userSelectors } from '@nx-homepage/store';
 import styles from './user.module.scss';
-import { mapDispatchToProps, mapStateToProps, UserProps } from './user.props';
 
-export function User({ user, setUser }: UserProps) {
+export function User() {
+  const user = useSelector(userSelectors.getUser);
+
+  const dispatch = useDispatch();
   useEffect(() => {
-    setUser();
-  }, [setUser]);
+    dispatch(userActions.fetchUser());
+  }, [dispatch]);
+
   return (
     <div className={styles['container']}>
       <h1>Welcome {user?.name}</h1>
     </div>
   );
 }
-
-export const UserContainer = connect(mapStateToProps, mapDispatchToProps)(User);
