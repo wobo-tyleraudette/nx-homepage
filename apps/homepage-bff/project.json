@@ -1,0 +1,52 @@
+{
+  "root": "apps/homepage-bff",
+  "sourceRoot": "apps/homepage-bff/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/node:webpack",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/homepage-bff",
+        "main": "apps/homepage-bff/src/main.ts",
+        "tsConfig": "apps/homepage-bff/tsconfig.app.json",
+        "assets": ["apps/homepage-bff/src/assets"]
+      },
+      "configurations": {
+        "production": {
+          "optimization": true,
+          "extractLicenses": true,
+          "inspect": false,
+          "fileReplacements": [
+            {
+              "replace": "apps/homepage-bff/src/environments/environment.ts",
+              "with": "apps/homepage-bff/src/environments/environment.prod.ts"
+            }
+          ]
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/node:node",
+      "options": {
+        "buildTarget": "homepage-bff:build"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/homepage-bff/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/homepage-bff"],
+      "options": {
+        "jestConfig": "apps/homepage-bff/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}
