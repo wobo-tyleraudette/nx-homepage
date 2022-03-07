@@ -2,6 +2,9 @@
   "version": 2,
   "projects": {
     "api-nest": "apps/api-nest",
+    "models": "libs/models",
+    "store": "libs/store",
+    "ui": "libs/ui",
     "webapp-react": "apps/webapp-react",
     "webapp-react-e2e": "apps/webapp-react-e2e"
   }
