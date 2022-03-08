@@ -1,6 +1,7 @@
 {
   "version": 2,
   "projects": {
+    "api": "libs/api",
     "api-nest": "apps/api-nest",
     "models": "libs/models",
     "store": "libs/store",

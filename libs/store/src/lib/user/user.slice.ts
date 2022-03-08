@@ -1,4 +1,5 @@
 import { IUser } from '@nx-homepage/models';
+import { UserService } from '@nx-homepage/api';
 import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { RootState } from '../webapp-react-root/webapp-react-root-state.interface';
 
@@ -27,18 +28,14 @@ export interface UserState {
  * }, [dispatch]);
  * ```
  */
-export const fetchUser = createAsyncThunk(
-  // TODO: map to api
-  'user/fetchStatus',
-  async (_, thunkAPI) => {
-    /**
-     * Replace this with your custom fetch call.
-     * For example, `return myApi.getUsers()`;
-     * Right now we just return an empty array.
-     */
-    return Promise.resolve({ name: 'Tyler' });
-  }
-);
+
+export const fetchUser = createAsyncThunk('user/userInfo', async () => {
+  // no try catch needed b/c extraReducers catches error
+  // user RejectedWithValue() for custom err handling
+  // https://redux-toolkit.js.org/api/createAsyncThunk#examples
+  const res = await UserService.getUserInfo();
+  return res;
+});
 
 export const initialUserState: UserState = {
   loadingStatus: 'not loaded',
