@@ -22,8 +22,15 @@ export class AppController {
     return this.demoService.getDemo();
   }
 
+  //Get with Observables
+  @Get('/user/userInfoObervable')
+  getUserInfoObservable() {
+    return this.userService.getUserInfoOservable();
+  }
+
   @Get('/user/userInfo')
-  async getUSerInfo() {
-    return this.userService.getUserInfo();
+  async getUserInfo() {
+    const res = await this.userService.getUserInfo();
+    return res;
   }
 }
