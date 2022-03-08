@@ -1,4 +1,4 @@
-import { Get, Injectable } from '@nestjs/common';
+import { Injectable } from '@nestjs/common';
 import { HttpService } from '@nestjs/axios';
 import { AxiosResponse } from 'axios';
 import { firstValueFrom, map, Observable } from 'rxjs';
@@ -9,7 +9,6 @@ export class UserService {
   constructor(private httpService: HttpService) {}
 
   // Observable
-  @Get()
   getUserInfoOservable(): Observable<AxiosResponse<string>> {
     return this.httpService
       .get('https://api.namefake.com')
@@ -17,7 +16,6 @@ export class UserService {
   }
 
   // Promise
-  @Get()
   async getUserInfo(): Promise<AxiosResponse> {
     const user = await firstValueFrom(
       this.httpService.get('https://api.namefake.com')

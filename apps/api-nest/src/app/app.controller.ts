@@ -1,5 +1,4 @@
-import { Controller, Get } from '@nestjs/common';
-
+import { Controller, Get, Param, Query } from '@nestjs/common';
 import { AppService } from './app.service';
 import { DemoService } from './demo/demo.service';
 import { UserService } from './user/user.service';
@@ -17,8 +16,15 @@ export class AppController {
     return this.appService.getData();
   }
 
+  @Get('/demo/:id')
+  getDemoWithParams(@Param() params) {
+    console.log({ params });
+    return this.demoService.getDemo();
+  }
+
   @Get('/demo')
-  getDemo() {
+  getDemoWithQuery(@Query() query) {
+    console.log({ query });
     return this.demoService.getDemo();
   }
 
