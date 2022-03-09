@@ -1,16 +1,16 @@
 {
-  "root": "apps/api-nest",
-  "sourceRoot": "apps/api-nest/src",
+  "root": "apps/homepage-bff",
+  "sourceRoot": "apps/homepage-bff/src",
   "projectType": "application",
   "targets": {
     "build": {
       "executor": "@nrwl/node:webpack",
       "outputs": ["{options.outputPath}"],
       "options": {
-        "outputPath": "dist/apps/api-nest",
-        "main": "apps/api-nest/src/main.ts",
-        "tsConfig": "apps/api-nest/tsconfig.app.json",
-        "assets": ["apps/api-nest/src/assets"]
+        "outputPath": "dist/apps/homepage-bff",
+        "main": "apps/homepage-bff/src/main.ts",
+        "tsConfig": "apps/homepage-bff/tsconfig.app.json",
+        "assets": ["apps/homepage-bff/src/assets"]
       },
       "configurations": {
         "production": {
@@ -19,8 +19,8 @@
           "inspect": false,
           "fileReplacements": [
             {
-              "replace": "apps/api-nest/src/environments/environment.ts",
-              "with": "apps/api-nest/src/environments/environment.prod.ts"
+              "replace": "apps/homepage-bff/src/environments/environment.ts",
+              "with": "apps/homepage-bff/src/environments/environment.prod.ts"
             }
           ]
         }
@@ -29,21 +29,21 @@
     "serve": {
       "executor": "@nrwl/node:node",
       "options": {
-        "buildTarget": "api-nest:build"
+        "buildTarget": "homepage-bff:build"
       }
     },
     "lint": {
       "executor": "@nrwl/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["apps/api-nest/**/*.ts"]
+        "lintFilePatterns": ["apps/homepage-bff/**/*.ts"]
       }
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/apps/api-nest"],
+      "outputs": ["coverage/apps/homepage-bff"],
       "options": {
-        "jestConfig": "apps/api-nest/jest.config.js",
+        "jestConfig": "apps/homepage-bff/jest.config.js",
         "passWithNoTests": true
       }
     }

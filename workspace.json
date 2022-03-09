@@ -2,12 +2,12 @@
   "version": 2,
   "projects": {
     "api": "libs/api",
-    "api-nest": "apps/api-nest",
+    "homepage-app": "apps/homepage-app",
+    "homepage-app-e2e": "apps/homepage-app-e2e",
+    "homepage-bff": "apps/homepage-bff",
     "models": "libs/models",
     "store": "libs/store",
     "ui": "libs/ui",
-    "utilities": "libs/utilities",
-    "webapp-react": "apps/webapp-react",
-    "webapp-react-e2e": "apps/webapp-react-e2e"
+    "utilities": "libs/utilities"
   }
 }

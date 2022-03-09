@@ -29,7 +29,7 @@
       }
     ]
   },
-  "defaultProject": "api-nest",
+  "defaultProject": "homepage-bff",
   "generators": {
     "@nrwl/react": {
       "application": {

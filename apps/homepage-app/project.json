@@ -1,6 +1,6 @@
 {
-  "root": "apps/webapp-react",
-  "sourceRoot": "apps/webapp-react/src",
+  "root": "apps/homepage-app",
+  "sourceRoot": "apps/homepage-app/src",
   "projectType": "application",
   "targets": {
     "build": {
@@ -9,17 +9,17 @@
       "defaultConfiguration": "production",
       "options": {
         "compiler": "babel",
-        "outputPath": "dist/apps/webapp-react",
-        "index": "apps/webapp-react/src/index.html",
+        "outputPath": "dist/apps/homepage-app",
+        "index": "apps/homepage-app/src/index.html",
         "baseHref": "/",
-        "main": "apps/webapp-react/src/main.tsx",
-        "polyfills": "apps/webapp-react/src/polyfills.ts",
-        "tsConfig": "apps/webapp-react/tsconfig.app.json",
+        "main": "apps/homepage-app/src/main.tsx",
+        "polyfills": "apps/homepage-app/src/polyfills.ts",
+        "tsConfig": "apps/homepage-app/tsconfig.app.json",
         "assets": [
-          "apps/webapp-react/src/favicon.ico",
-          "apps/webapp-react/src/assets"
+          "apps/homepage-app/src/favicon.ico",
+          "apps/homepage-app/src/assets"
         ],
-        "styles": ["apps/webapp-react/src/styles.scss"],
+        "styles": ["apps/homepage-app/src/styles.scss"],
         "scripts": [],
         "webpackConfig": "@nrwl/react/plugins/webpack"
       },
@@ -27,8 +27,8 @@
         "production": {
           "fileReplacements": [
             {
-              "replace": "apps/webapp-react/src/environments/environment.ts",
-              "with": "apps/webapp-react/src/environments/environment.prod.ts"
+              "replace": "apps/homepage-app/src/environments/environment.ts",
+              "with": "apps/homepage-app/src/environments/environment.prod.ts"
             }
           ],
           "optimization": true,
@@ -43,13 +43,13 @@
     "serve": {
       "executor": "@nrwl/web:dev-server",
       "options": {
-        "buildTarget": "webapp-react:build",
-        "proxyConfig": "apps/webapp-react/proxy.conf.json",
+        "buildTarget": "homepage-app:build",
+        "proxyConfig": "apps/homepage-app/proxy.conf.json",
         "hmr": true
       },
       "configurations": {
         "production": {
-          "buildTarget": "webapp-react:build:production",
+          "buildTarget": "homepage-app:build:production",
           "hmr": false
         }
       }
@@ -58,14 +58,14 @@
       "executor": "@nrwl/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["apps/webapp-react/**/*.{ts,tsx,js,jsx}"]
+        "lintFilePatterns": ["apps/homepage-app/**/*.{ts,tsx,js,jsx}"]
       }
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/apps/webapp-react"],
+      "outputs": ["coverage/apps/homepage-app"],
       "options": {
-        "jestConfig": "apps/webapp-react/jest.config.js",
+        "jestConfig": "apps/homepage-app/jest.config.js",
         "passWithNoTests": true
       }
     }

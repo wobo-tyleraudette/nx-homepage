@@ -1,5 +1,5 @@
 module.exports = {
-  displayName: 'api-nest',
+  displayName: 'homepage-bff',
   preset: '../../jest.preset.js',
   globals: {
     'ts-jest': {
@@ -11,5 +11,5 @@ module.exports = {
     '^.+\\.[tj]s$': 'ts-jest',
   },
   moduleFileExtensions: ['ts', 'js', 'html'],
-  coverageDirectory: '../../coverage/apps/api-nest',
+  coverageDirectory: '../../coverage/apps/homepage-bff',
 };
