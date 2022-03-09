@@ -18,7 +18,8 @@
       "@nx-homepage/api": ["libs/api/src/index.ts"],
       "@nx-homepage/models": ["libs/models/src/index.ts"],
       "@nx-homepage/store": ["libs/store/src/index.ts"],
-      "@nx-homepage/ui": ["libs/ui/src/index.ts"]
+      "@nx-homepage/ui": ["libs/ui/src/index.ts"],
+      "@nx-homepage/utilities": ["libs/utilities/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

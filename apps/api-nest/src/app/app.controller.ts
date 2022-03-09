@@ -1,7 +1,7 @@
 import { Controller, Get, Param, Query } from '@nestjs/common';
 import { AppService } from './app.service';
 import { DemoService } from './demo/demo.service';
-import { UserService } from './user/user.service';
+import { UserService } from '@nx-homepage/api';
 
 @Controller()
 export class AppController {
@@ -18,13 +18,11 @@ export class AppController {
 
   @Get('/demo/:id')
   getDemoWithParams(@Param() params) {
-    console.log({ params });
     return this.demoService.getDemo();
   }
 
   @Get('/demo')
   getDemoWithQuery(@Query() query) {
-    console.log({ query });
     return this.demoService.getDemo();
   }
 

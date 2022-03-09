@@ -3,7 +3,7 @@ import { HttpModule } from './http/http.module';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { DemoService } from './demo/demo.service';
-import { UserService } from './user/user.service';
+import { UserService } from '@nx-homepage/api';
 
 @Module({
   imports: [HttpModule],

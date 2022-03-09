@@ -6,6 +6,7 @@
     "models": "libs/models",
     "store": "libs/store",
     "ui": "libs/ui",
+    "utilities": "libs/utilities",
     "webapp-react": "apps/webapp-react",
     "webapp-react-e2e": "apps/webapp-react-e2e"
   }
