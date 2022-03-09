@@ -1,10 +1,8 @@
 # nx-homepage
 
+<p href="https://nx.dev"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png" width="100"></p>
+
 This project was generated using [Nx](https://nx.dev).
-
-<p style="text-align: center;"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png" width="450"></p>
-
-🔎 **Smart, Fast and Extensible Build System**
 
 ## Adding capabilities to your workspace
 
@@ -12,46 +10,17 @@ Nx supports many plugins which add capabilities for developing different types o
 
 These capabilities include generating applications, libraries, etc as well as the devtools to test, and build projects as well.
 
-Below are our core plugins:
+Applications in this repo:
 
-- [React](https://reactjs.org)
-  - `npm install --save-dev @nrwl/react`
-- Web (no framework frontends)
-  - `npm install --save-dev @nrwl/web`
-- [Angular](https://angular.io)
-  - `npm install --save-dev @nrwl/angular`
-- [Nest](https://nestjs.com)
-  - `npm install --save-dev @nrwl/nest`
-- [Express](https://expressjs.com)
-  - `npm install --save-dev @nrwl/express`
-- [Node](https://nodejs.org)
-  - `npm install --save-dev @nrwl/node`
-
-There are also many [community plugins](https://nx.dev/community) you could add.
-
-## Generate an application
-
-Run `nx g @nrwl/react:app my-app` to generate an application.
-
-> You can use any of the plugins above to generate applications as well.
-
-When using Nx, you can create multiple applications and libraries in the same workspace.
-
-## Generate a library
-
-Run `nx g @nrwl/react:lib my-lib` to generate a library.
-
-> You can also use any of the plugins above to generate libraries as well.
-
-Libraries are shareable across libraries and applications. They can be imported from `@nx-homepage/mylib`.
+- [homepage-app](apps/homepage-app/README.md) (react)
+- [homepage-e2e](apps/homepage-e2e/README.md) (cypress)
+- [homepage-bff](apps/homepage-bff/README.md) (nest)
 
 ## Development server
 
 Run `nx serve my-app` for a dev server. Navigate to http://localhost:4200/. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
-
-Run `nx g @nrwl/react:component my-component --project=my-app` to generate a new component.
+Run `nx run-many --target=serve --projects=homepage-app,homepage-bff` to run both applications
 
 ## Build
 
@@ -69,6 +38,27 @@ Run `nx e2e my-app` to execute the end-to-end tests via [Cypress](https://www.cy
 
 Run `nx affected:e2e` to execute the end-to-end tests affected by a change.
 
+## Using generators
+
+run `nx g @nrwl/nest:module --help` to see available commands.
+run `nx g @nrwl/nest:module my-module --dry run` to preview changes.
+
+### Generate a new application
+
+Run `nx g @nrwl/[nest, node, react]:app my-app` to generate an application.
+
+### Generate a library
+
+Run `nx g @nrwl/[node, react]:lib my-lib` to generate a library.
+
+Libraries are shareable across libraries and applications. They can be imported from `@nx-homepage/mylib`.
+
+### Code scaffolding
+
+Run `nx g @nrwl/react:component my-component --project=ui` to generate a new component.
+
+Run `nx g @nrwl/nest:module my-module --project=api --directory lib` to generate a new nest module.
+
 ## Understand your workspace
 
 Run `nx graph` to see a diagram of the dependencies of your projects.
@@ -76,15 +66,3 @@ Run `nx graph` to see a diagram of the dependencies of your projects.
 ## Further help
 
 Visit the [Nx Documentation](https://nx.dev) to learn more.
-
-## ☁ Nx Cloud
-
-### Distributed Computation Caching & Distributed Task Execution
-
-<p style="text-align: center;"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-cloud-card.png"></p>
-
-Nx Cloud pairs with Nx in order to enable you to build and test code more rapidly, by up to 10 times. Even teams that are new to Nx can connect to Nx Cloud and start saving time instantly.
-
-Teams using Nx gain the advantage of building full-stack applications with their preferred framework alongside Nx’s advanced code generation and project dependency graph, plus a unified experience for both frontend and backend developers.
-
-Visit [Nx Cloud](https://nx.app/) to learn more.
