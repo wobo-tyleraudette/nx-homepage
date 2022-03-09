@@ -10,6 +10,7 @@ export class UserService {
 
   // Observable
   getUserInfoOservable(): Observable<AxiosResponse<string>> {
+    console.log('get');
     return this.httpService
       .get('https://api.namefake.com')
       .pipe(map((res) => res.data));

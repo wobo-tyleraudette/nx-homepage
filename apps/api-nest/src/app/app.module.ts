@@ -1,13 +1,12 @@
 import { Module } from '@nestjs/common';
-import { HttpModule } from './http/http.module';
 import { AppController } from './app.controller';
+import { HttpModule } from '@nestjs/axios';
+import { UserModule, CoreModule } from '@nx-homepage/api';
 import { AppService } from './app.service';
 import { DemoService } from './demo/demo.service';
-import { UserService } from '@nx-homepage/api';
-
 @Module({
-  imports: [HttpModule],
+  imports: [HttpModule, CoreModule, UserModule],
   controllers: [AppController],
-  providers: [AppService, DemoService, UserService],
+  providers: [AppService, DemoService],
 })
 export class AppModule {}

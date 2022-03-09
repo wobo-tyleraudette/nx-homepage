@@ -1,2 +1,3 @@
 export * from './lib/api';
-export * from './lib/user/user.service';
+export * from './lib/user/user.module';
+export * from './lib/core/core.module';
