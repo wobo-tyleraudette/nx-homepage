@@ -18,9 +18,12 @@ export function App() {
   }, []);
   return (
     <Provider store={rootStore}>
-      <NxWelcome title="webapp-react" message={demo.message} />
+      <NxWelcome
+        title="webapp-react"
+        message={demo.message}
+        UserComponent={User}
+      />
       <div />
-      <User />
 
       {/* START: routes */}
       {/* These routes and navigation have been generated for you */}
