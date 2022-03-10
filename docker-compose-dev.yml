@@ -11,7 +11,7 @@ services:
       context: ./
       cache_from:
         - base-image:nx-base
-      dockerfile: ./apps/homepage-bff/Dockerfile
+      dockerfile: ./apps/homepage-bff/Dockerfile.dev
       args:
         NODE_ENV: 'development'
         BUILD_FLAG: ''
@@ -23,7 +23,9 @@ services:
       PORT: 4939
     networks:
       - corp
-    restart: on-failure
+    restart: always
+    volumes:
+      - ./:/app
 
   homepage-app:
     container_name: homepage-app
@@ -31,7 +33,7 @@ services:
       context: ./
       cache_from:
         - nginx:1.19.2
-      dockerfile: ./apps/homepage-app/Dockerfile
+      dockerfile: ./apps/homepage-app/Dockerfile.dev
       args:
         NODE_ENV: 'development'
         BUILD_FLAG: ''
@@ -39,8 +41,12 @@ services:
     ports:
       - 4900:80
     environment:
+      CHOKIDAR_USEPOLLING: 'true'
       NODE_ENV: 'development'
       PORT: 4900
     networks:
       - corp
-    restart: on-failure
+    restart: always
+    volumes:
+      - ./:/app
+      - /app/node_modules
