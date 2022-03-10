@@ -13,7 +13,7 @@ export class UserController {
 
   @Get('/user/userInfo')
   async getUserInfo() {
-    console.log('==get');
+    console.log('--get');
     const res = await this.userService.getUserInfo();
     return res;
   }

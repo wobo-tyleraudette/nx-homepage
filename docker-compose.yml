@@ -23,7 +23,9 @@ services:
       PORT: 4939
     networks:
       - corp
-    restart: on-failure
+    restart: always
+    volumes:
+      - ./:/app
 
   homepage-app:
     container_name: homepage-app

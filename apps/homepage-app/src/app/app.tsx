@@ -43,7 +43,7 @@ export function App() {
         exact
         render={() => (
           <div>
-            This is the generated root route.{' '}
+            This is the generated roossst route.{' '}
             <Link to="/page-2">Click here for page 2.</Link>
           </div>
         )}
