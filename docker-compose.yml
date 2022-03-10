@@ -1,0 +1,46 @@
+version: '3.8'
+
+networks:
+  corp:
+    driver: bridge
+
+services:
+  homepage-bff:
+    container_name: homepage-bff
+    build:
+      context: ./
+      cache_from:
+        - base-image:nx-base
+      dockerfile: ./apps/homepage-bff/Dockerfile
+      args:
+        NODE_ENV: 'development'
+        BUILD_FLAG: ''
+    image: homepage-bff:nx-dev
+    ports:
+      - 4939:4939
+    environment:
+      NODE_ENV: 'development'
+      PORT: 4939
+    networks:
+      - corp
+    restart: on-failure
+
+  homepage-app:
+    container_name: homepage-app
+    build:
+      context: ./
+      cache_from:
+        - nginx:1.19.2
+      dockerfile: ./apps/homepage-app/Dockerfile
+      args:
+        NODE_ENV: 'development'
+        BUILD_FLAG: ''
+    image: homepage-app:nx-dev
+    ports:
+      - 4900:80
+    environment:
+      NODE_ENV: 'development'
+      PORT: 4900
+    networks:
+      - corp
+    restart: on-failure
