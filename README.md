@@ -14,7 +14,7 @@ Applications in this repo:
 
 - [homepage-app](apps/homepage-app/README.md) (react)
 - [homepage-e2e](apps/homepage-e2e/README.md) (cypress)
-- [homepage-bff](apps/homepage-bff/README.md) (nest)
+- [homepage-api](apps/homepage-api/README.md) (nest)
 
 ## Getting Started
 

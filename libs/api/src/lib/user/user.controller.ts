@@ -5,16 +5,16 @@ import { UserService } from './user.service';
 export class UserController {
   constructor(private userService: UserService) {}
 
-  //Get with Observables
-  @Get('/user/userInfoObervable')
+  //Get with observable
+  @Get('/user/userInfo')
   getUserInfoObservable() {
-    return this.userService.getUserInfoOservable();
+    return this.userService.getUserInfo();
   }
 
-  @Get('/user/userInfo')
+  //Get with promise
+  @Get('/user/userInfoPromise')
   async getUserInfo() {
-    console.log('==get');
-    const res = await this.userService.getUserInfo();
+    const res = await this.userService.getUserInfoPromise();
     return res;
   }
 }

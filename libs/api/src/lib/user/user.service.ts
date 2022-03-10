@@ -9,15 +9,14 @@ export class UserService {
   constructor(private httpService: HttpService) {}
 
   // Observable
-  getUserInfoOservable(): Observable<AxiosResponse<string>> {
-    console.log('get');
+  getUserInfo(): Observable<AxiosResponse<string>> {
     return this.httpService
       .get('https://api.namefake.com')
       .pipe(map((res) => res.data));
   }
 
   // Promise
-  async getUserInfo(): Promise<AxiosResponse> {
+  async getUserInfoPromise(): Promise<AxiosResponse> {
     const user = await firstValueFrom(
       this.httpService.get('https://api.namefake.com')
     );

@@ -34,7 +34,6 @@ export const fetchUser = createAsyncThunk('user/userInfo', async () => {
   // user RejectedWithValue() for custom err handling
   // https://redux-toolkit.js.org/api/createAsyncThunk#examples
   const res = await UserService.getUserInfo();
-  console.log({ res });
   return res.data;
 });
 

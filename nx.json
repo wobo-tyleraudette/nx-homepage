@@ -29,7 +29,7 @@
       }
     ]
   },
-  "defaultProject": "homepage-bff",
+  "defaultProject": "homepage-api",
   "generators": {
     "@nrwl/react": {
       "application": {
