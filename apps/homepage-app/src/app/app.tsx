@@ -3,26 +3,14 @@ import styles from './app.module.scss';
 import NxWelcome from './nx-welcome';
 
 import { Route, Link } from 'react-router-dom';
-import { useEffect, useState } from 'react';
 import { User } from '@nx-homepage/ui';
 import { Provider } from 'react-redux';
 import { rootStore } from '@nx-homepage/store';
 
 export function App() {
-  const [demo, setdemo] = useState<{ message: string }>({ message: '' });
-
-  useEffect(() => {
-    fetch('/api/demo')
-      .then((t) => t.json())
-      .then(setdemo);
-  }, []);
   return (
     <Provider store={rootStore}>
-      <NxWelcome
-        title="webapp-react"
-        message={demo.message}
-        UserComponent={User}
-      />
+      <NxWelcome title="webapp-react" UserComponent={User} />
       <div />
 
       {/* START: routes */}
