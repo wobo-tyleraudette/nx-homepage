@@ -8,6 +8,7 @@ import { Provider } from 'react-redux';
 import { rootStore } from '@nx-homepage/store';
 
 export function App() {
+  console.log(process.env);
   return (
     <Provider store={rootStore}>
       <NxWelcome title="webapp-react" UserComponent={User} />

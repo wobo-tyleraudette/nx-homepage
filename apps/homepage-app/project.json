@@ -44,7 +44,6 @@
       "executor": "@nrwl/web:dev-server",
       "options": {
         "buildTarget": "homepage-app:build",
-        "proxyConfig": "apps/homepage-app/proxy.conf.json",
         "hmr": true
       },
       "configurations": {

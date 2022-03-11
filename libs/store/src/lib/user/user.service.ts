@@ -1,6 +1,8 @@
+import { api } from '../api.service';
+
 const getUserInfo = async () => {
-  const res = await fetch('api/user/userInfo');
-  return await res.json();
+  const res = await api.get('user/userInfo');
+  return res.data;
 };
 
 export const UserService = { getUserInfo };
