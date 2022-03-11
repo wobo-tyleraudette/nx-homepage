@@ -1,16 +1,16 @@
 {
-  "root": "apps/homepage-bff",
-  "sourceRoot": "apps/homepage-bff/src",
+  "root": "apps/homepage-api",
+  "sourceRoot": "apps/homepage-api/src",
   "projectType": "application",
   "targets": {
     "build": {
       "executor": "@nrwl/node:webpack",
       "outputs": ["{options.outputPath}"],
       "options": {
-        "outputPath": "dist/apps/homepage-bff",
-        "main": "apps/homepage-bff/src/main.ts",
-        "tsConfig": "apps/homepage-bff/tsconfig.app.json",
-        "assets": ["apps/homepage-bff/src/assets"]
+        "outputPath": "dist/apps/homepage-api",
+        "main": "apps/homepage-api/src/main.ts",
+        "tsConfig": "apps/homepage-api/tsconfig.app.json",
+        "assets": ["apps/homepage-api/src/assets"]
       },
       "configurations": {
         "production": {
@@ -19,8 +19,8 @@
           "inspect": false,
           "fileReplacements": [
             {
-              "replace": "apps/homepage-bff/src/environments/environment.ts",
-              "with": "apps/homepage-bff/src/environments/environment.prod.ts"
+              "replace": "apps/homepage-api/src/environments/environment.ts",
+              "with": "apps/homepage-api/src/environments/environment.prod.ts"
             }
           ]
         }
@@ -29,21 +29,21 @@
     "serve": {
       "executor": "@nrwl/node:node",
       "options": {
-        "buildTarget": "homepage-bff:build"
+        "buildTarget": "homepage-api:build"
       }
     },
     "lint": {
       "executor": "@nrwl/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["apps/homepage-bff/**/*.ts"]
+        "lintFilePatterns": ["apps/homepage-api/**/*.ts"]
       }
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/apps/homepage-bff"],
+      "outputs": ["coverage/apps/homepage-api"],
       "options": {
-        "jestConfig": "apps/homepage-bff/jest.config.js",
+        "jestConfig": "apps/homepage-api/jest.config.js",
         "passWithNoTests": true
       }
     }

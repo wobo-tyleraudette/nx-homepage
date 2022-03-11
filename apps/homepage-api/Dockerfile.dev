@@ -4,7 +4,7 @@ ARG NODE_ENV
 ARG BUILD_FLAG
 WORKDIR /app/builder
 COPY . .
-RUN npx nx build homepage-bff ${BUILD_FLAG}
+RUN npx nx build homepage-api ${BUILD_FLAG}
 
 FROM base-image:nx-base
 
@@ -13,4 +13,4 @@ COPY --from=builder /app/builder ./
 ENV NODE_ENV=$NODE_ENV
 
 
-CMD ["npx", "nx", "serve", "homepage-bff"]
+CMD ["npx", "nx", "serve", "homepage-api"]
