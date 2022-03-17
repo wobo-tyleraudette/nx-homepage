@@ -20,7 +20,13 @@
           "apps/homepage-app/src/assets"
         ],
         "styles": ["apps/homepage-app/src/styles.scss"],
-        "scripts": [],
+        "scripts": [
+          {
+            "bundleName": "env",
+            "inject": true,
+            "input": "apps/homepage-app/src/config/env.js"
+          }
+        ],
         "webpackConfig": "@nrwl/react/plugins/webpack"
       },
       "configurations": {
