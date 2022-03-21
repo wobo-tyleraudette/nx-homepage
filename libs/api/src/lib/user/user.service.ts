@@ -15,12 +15,4 @@ export class UserService {
       .get('https://api.namefake.com')
       .pipe(map((res) => res.data));
   }
-
-  // Promise
-  async getUserInfoPromise(): Promise<AxiosResponse> {
-    const user = await firstValueFrom(
-      this.httpService.get('https://api.namefake.com')
-    );
-    return user.data;
-  }
 }
