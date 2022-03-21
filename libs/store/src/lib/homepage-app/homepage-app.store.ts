@@ -1,7 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit';
 
-import { initialRootState } from './webapp-react-root-state.initial';
-import { rootReducer } from './webapp-react-root.reducer';
+import { initialRootState } from './homepage-app-state.initial';
+import { rootReducer } from './homepage-app.reducer';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 declare const process: any;
