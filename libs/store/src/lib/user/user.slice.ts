@@ -1,7 +1,7 @@
 import { IUser } from '@nx-homepage/models';
 import { UserService } from './user.service';
 import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { RootState } from '../webapp-react-root/webapp-react-root-state.interface';
+import { RootState } from '../homepage-app/homepage-app-state.interface';
 
 export const USER_FEATURE_KEY = 'user';
 
