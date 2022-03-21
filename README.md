@@ -21,3 +21,23 @@ Applications in this repo:
 Refer to the [Wiki](https://github.com/wobo-tyleraudette/nx-homepage/wiki/Getting-Started) to get started with this repository.
 
 Visit the [Nx Documentation](https://nx.dev) to learn more.
+
+## Generators
+
+(`--dry-run` shows preview only)
+
+## React
+
+- **Create React Component:** `nx g @nrwl/react:component --project ui --dry-run`
+- **Create React Hook:** `nx g @nrwl/react:hook --project ui --dry-run`
+
+## Redux
+
+- **Create Redux Slice:** `nx g @nrwl/react:redux --project store --name ${slice name} `--dry-run
+
+## Nest
+
+- **Create Nest Class:** `nx g @nrwl/nest:class --project api --dry-run`
+- **Create Nest Controller:** `nx g @nrwl/nest:controller --project api --dry-run`
+- **Create Nest Interceptor:** `nx g @nrwl/nest:interceptor --project api --dry-run`
+- **Create Nest Module:** `nx g @nrwl/nest:module --project api --dry-run`
