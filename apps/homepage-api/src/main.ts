@@ -14,10 +14,11 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   const globalPrefix = 'api';
   app.setGlobalPrefix(globalPrefix);
+  console.log('cors:', process.env.NX_HOMEPAGE_APP_URL);
   app.enableCors({
     origin: process.env.NX_HOMEPAGE_APP_URL,
   });
-  const port = process.env.PORT || 3333;
+  const port = process.env.PORT || 4939;
   await app.listen(port);
   Logger.log(
     `🚀 Application is running on: http://localhost:${port}/${globalPrefix}`

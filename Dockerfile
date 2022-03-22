@@ -1,4 +1,4 @@
-FROM node:16 as builder
+FROM node:16.3.0-alpine as builder
 ARG NODE_ENV
 ARG BUILD_FLAG
 WORKDIR /app/builder

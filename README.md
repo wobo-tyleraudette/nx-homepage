@@ -28,16 +28,16 @@ Visit the [Nx Documentation](https://nx.dev) to learn more.
 
 ## React
 
-- **Create React Component:** `nx g @nrwl/react:component --project ui --dry-run`
-- **Create React Hook:** `nx g @nrwl/react:hook --project ui --dry-run`
+- **Create React Component:** `nx g @nrwl/react:component --project ui --directory lib/components --dry-run`
+- **Create React Hook:** `nx g @nrwl/react:hook --project ui --directory lib/hooks --dry-run`
 
 ## Redux
 
-- **Create Redux Slice:** `nx g @nrwl/react:redux --project store --name ${slice name} `--dry-run
+- **Create Redux Slice:** `nx g @nrwl/react:redux --project store --directory lib --name ${slice name} `--dry-run
 
 ## Nest
 
-- **Create Nest Class:** `nx g @nrwl/nest:class --project api --dry-run`
-- **Create Nest Controller:** `nx g @nrwl/nest:controller --project api --dry-run`
-- **Create Nest Interceptor:** `nx g @nrwl/nest:interceptor --project api --dry-run`
-- **Create Nest Module:** `nx g @nrwl/nest:module --project api --dry-run`
+- **Create Nest Class:** `nx g @nrwl/nest:class --project api --directory lib --dry-run`
+- **Create Nest Controller:** `nx g @nrwl/nest:controller --project api --directory lib --dry-run`
+- **Create Nest Interceptor:** `nx g @nrwl/nest:interceptor --project api --directory lib --dry-run`
+- **Create Nest Module:** `nx g @nrwl/nest:module --project api --directory lib --dry-run`
