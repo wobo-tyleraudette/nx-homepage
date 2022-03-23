@@ -31,7 +31,6 @@ export const getSecrets = async (config) => {
       Logger.log(`error fetching secret: ${secret} from ${kvUrl}`);
     }
     if (secret.status === 'fulfilled') {
-      console.log('val', `NX_${secret.value.key}`);
       process.env[`NX_${secret.value.key}`] = secret.value.value;
     }
   });

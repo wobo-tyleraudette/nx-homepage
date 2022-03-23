@@ -12,5 +12,5 @@ export function User() {
     dispatch(userActions.fetchUser());
   }, [dispatch]);
 
-  return <h1>Welcome {user?.name}</h1>;
+  return <h1 className="test-class">Welcome {user?.name}</h1>;
 }
