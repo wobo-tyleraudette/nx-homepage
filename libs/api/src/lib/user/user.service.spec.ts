@@ -1,8 +1,9 @@
 import { HttpService, HttpModule } from '@nestjs/axios';
 import { Test, TestingModule } from '@nestjs/testing';
-import { of } from 'rxjs';
+import { map, of } from 'rxjs';
 import { UserService } from './user.service';
 import { mockAxios200 } from '@nx-homepage/utilities';
+import { doesNotMatch } from 'assert';
 
 describe('UserService', () => {
   let service: UserService;
@@ -28,7 +29,10 @@ describe('UserService', () => {
       .spyOn(httpService, 'get')
       .mockImplementationOnce(() => of(mockAxios200));
 
-    service.getUserInfo();
+    const res = service.getUserInfo();
     expect(httpService.get).toHaveBeenCalled();
+    res.subscribe((i) => {
+      expect(i).toEqual({ name: 'Test Name ' });
+    });
   });
 });
