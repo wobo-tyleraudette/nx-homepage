@@ -1,9 +1,8 @@
 import { HttpService, HttpModule } from '@nestjs/axios';
 import { Test, TestingModule } from '@nestjs/testing';
-import { map, of } from 'rxjs';
+import { of } from 'rxjs';
 import { UserService } from './user.service';
 import { mockAxios200 } from '@nx-homepage/utilities';
-import { doesNotMatch } from 'assert';
 
 describe('UserService', () => {
   let service: UserService;
