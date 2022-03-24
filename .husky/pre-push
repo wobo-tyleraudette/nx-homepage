@@ -1,6 +1,9 @@
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 
+# do not run husky pre-push in CI context
+[[ -n "$CI" && -n "$GITHUB_ACTION" ]] && exit 0
+
 nx affected --target=test --coverage
 nx affected --target=format:write
 nx affected --target=lint --parallel --fix=true
