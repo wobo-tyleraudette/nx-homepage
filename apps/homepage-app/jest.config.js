@@ -1,6 +1,6 @@
 module.exports = {
   displayName: 'homepage-app',
-  preset: '../../jest.preset.js',
+  preset: '../../jest.preset-app.js',
   transform: {
     '^(?!.*\\.(js|jsx|ts|tsx|css|json)$)': '@nrwl/react/plugins/jest',
     '^.+\\.[tj]sx?$': 'babel-jest',

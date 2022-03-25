@@ -36,15 +36,6 @@ export function App() {
           </div>
         )}
       />
-      <Route
-        path="/page-2"
-        exact
-        render={() => (
-          <div>
-            <Link to="/">Click here to go back to root page.</Link>
-          </div>
-        )}
-      />
       {/* END: routes */}
     </Provider>
   );
