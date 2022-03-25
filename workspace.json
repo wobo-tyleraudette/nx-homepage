@@ -2,6 +2,7 @@
   "version": 2,
   "projects": {
     "api": "libs/api",
+    "data": "libs/data",
     "homepage-api": "apps/homepage-api",
     "homepage-app": "apps/homepage-app",
     "homepage-app-e2e": "apps/homepage-app-e2e",

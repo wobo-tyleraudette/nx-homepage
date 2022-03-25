@@ -1,33 +1,52 @@
-import { fetchUser, userAdapter, userReducer } from './user.slice';
+import {
+  fetchUser,
+  userReducer,
+  userSelectors,
+  getUserState,
+} from './user.slice';
+import { UserService } from './user.service';
+import { configureStore } from '@reduxjs/toolkit';
 
 describe('user reducer', () => {
-  it('should handle initial state', () => {
-    const expected = userAdapter.getInitialState({
-      loadingStatus: 'not loaded',
-      error: null,
+  it('should call UserService', async () => {
+    const store = configureStore({
+      reducer: userReducer,
     });
 
-    expect(userReducer(undefined, { type: '' })).toEqual(expected);
+    jest.spyOn(UserService, 'getUserInfo').mockResolvedValue({ data: 'test' });
+    await store.dispatch(fetchUser());
+    expect(UserService.getUserInfo).toHaveBeenCalled();
   });
 
   it('should handle fetchUsers', () => {
     let state = userReducer(undefined, fetchUser.pending(null, null));
-
     expect(state).toEqual(
       expect.objectContaining({
         loadingStatus: 'loading',
-        error: null,
-        entities: {},
       })
     );
 
-    state = userReducer(state, fetchUser.fulfilled([{ id: 1 }], null, null));
-
+    state = userReducer(
+      state,
+      fetchUser.fulfilled({ name: 'Name' }, null, null)
+    );
     expect(state).toEqual(
       expect.objectContaining({
         loadingStatus: 'loaded',
-        error: null,
-        entities: { 1: { id: 1 } },
+        user: { name: 'Name' },
+      })
+    );
+
+    const rootState = { user: state };
+    expect(getUserState(rootState)).toEqual(
+      expect.objectContaining({
+        user: { name: 'Name' },
+      })
+    );
+
+    expect(userSelectors.getUser(rootState)).toEqual(
+      expect.objectContaining({
+        name: 'Name',
       })
     );
 
@@ -40,7 +59,7 @@ describe('user reducer', () => {
       expect.objectContaining({
         loadingStatus: 'error',
         error: 'Uh oh',
-        entities: { 1: { id: 1 } },
+        user: { name: 'Name' },
       })
     );
   });

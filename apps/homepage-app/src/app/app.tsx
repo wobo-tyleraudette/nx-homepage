@@ -6,11 +6,8 @@ import { Route, Link } from 'react-router-dom';
 import { User } from '@nx-homepage/ui';
 import { Provider } from 'react-redux';
 import { rootStore } from '@nx-homepage/store';
-import { config } from '../config/config';
 
 export function App() {
-  console.log(process.env);
-  console.log(config);
   return (
     <Provider store={rootStore}>
       <NxWelcome title="webapp-react" UserComponent={User} />
@@ -36,15 +33,6 @@ export function App() {
           <div>
             This is the generated roossst route.{' '}
             <Link to="/page-2">Click here for page 2.</Link>
-          </div>
-        )}
-      />
-      <Route
-        path="/page-2"
-        exact
-        render={() => (
-          <div>
-            <Link to="/">Click here to go back to root page.</Link>
           </div>
         )}
       />
