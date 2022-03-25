@@ -44,11 +44,7 @@ export const initialUserState: UserState = {
 export const userSlice = createSlice({
   name: USER_FEATURE_KEY,
   initialState: initialUserState,
-  reducers: {
-    setUser(state: UserState, action: PayloadAction<IUser>) {
-      state.user = action.payload;
-    },
-  },
+  reducers: {},
   extraReducers: (builder) => {
     builder
       .addCase(fetchUser.pending, (state: UserState) => {
