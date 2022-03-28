@@ -6,11 +6,24 @@ import { Route, Link } from 'react-router-dom';
 import { User } from '@nx-homepage/ui';
 import { Provider } from 'react-redux';
 import { rootStore } from '@nx-homepage/store';
+import { WoboAuthUserContext, useAuthNavigation } from '@workboard/auth-ui';
+import { useContext, useEffect } from 'react';
 
-export function App() {
+const App = () => {
+  console.log('--ap');
+  const user = useContext(WoboAuthUserContext);
+  console.log({ user });
+  const [goToLogin] = useAuthNavigation();
+  useEffect(() => {
+    if (!user) {
+      console.log('go');
+      goToLogin();
+    }
+  }, [user]);
+
   return (
     <Provider store={rootStore}>
-      <NxWelcome title="homepage-app" UserComponent={User} />
+      {/* <NxWelcome title="homepage-app" UserComponent={User} /> */}
       <div />
 
       {/* START: routes */}
@@ -39,6 +52,6 @@ export function App() {
       {/* END: routes */}
     </Provider>
   );
-}
+};
 
 export default App;
