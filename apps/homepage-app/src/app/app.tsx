@@ -10,7 +10,7 @@ import { rootStore } from '@nx-homepage/store';
 export function App() {
   return (
     <Provider store={rootStore}>
-      <NxWelcome title="webapp-react" UserComponent={User} />
+      <NxWelcome title="homepage-app" UserComponent={User} />
       <div />
 
       {/* START: routes */}
