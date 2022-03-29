@@ -1,8 +1,13 @@
-import { Logger } from '@nestjs/common';
+/**
+ * This is not a production server yet!
+ * This is only a minimal backend to get started.
+ */
+
 import { NestFactory } from '@nestjs/core';
 import { getSecrets, startAuthServer } from '@nx-homepage/api';
 import { AppModule } from './app/app.module';
 import { config } from './config/config';
+import { woboLogger } from '@nx-homepage/utilities';
 
 async function bootstrap() {
   await getSecrets(config);
@@ -14,8 +19,7 @@ async function bootstrap() {
   });
   const port = process.env.PORT || 4940;
   await app.listen(port);
-
-  Logger.log(
+  woboLogger.info(
     `🚀 Application is running on: http://localhost:${port}/${globalPrefix}`
   );
   startAuthServer();
