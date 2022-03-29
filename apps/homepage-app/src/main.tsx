@@ -12,8 +12,7 @@ ReactDOM.render(
         config={{
           proxyEndpoint: config.NX_PROXY_URI,
           clientId: config.NX_CLIENT_ID,
-          authBaseEndpoint: config.HOMEPAGE_APP_URL,
-          redirectUri: 'https://okrcanvas.dt.wobo-int.com/',
+          authBaseEndpoint: config.NX_WB_BASE_URL,
         }}
       >
         <App />
@@ -22,3 +21,5 @@ ReactDOM.render(
   </StrictMode>,
   document.getElementById('root')
 );
+
+console.log(JSON.stringify(config, null, 2));

@@ -16,10 +16,9 @@ const App = () => {
   const [goToLogin] = useAuthNavigation();
   useEffect(() => {
     if (!user) {
-      console.log('go');
       goToLogin();
     }
-  }, [user]);
+  }, [goToLogin, user]);
 
   return (
     <Provider store={rootStore}>

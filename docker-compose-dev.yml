@@ -17,10 +17,10 @@ services:
         BUILD_FLAG: ''
     image: homepage-api:nx-dev
     ports:
-      - 4939:4939
+      - 4940:4940
     environment:
       NODE_ENV: 'development'
-      PORT: 4939
+      PORT: 4940
     networks:
       - corp
     restart: always
@@ -39,11 +39,11 @@ services:
         BUILD_FLAG: ''
     image: homepage-app:nx-dev
     ports:
-      - 4200:80
+      - 3005:80
     environment:
       CHOKIDAR_USEPOLLING: 'true'
       NODE_ENV: 'development'
-      PORT: 4200
+      PORT: 3005
     networks:
       - corp
     restart: always
