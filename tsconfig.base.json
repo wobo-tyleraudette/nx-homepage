@@ -20,8 +20,7 @@
       "@nx-homepage/models": ["libs/models/src/index.ts"],
       "@nx-homepage/store": ["libs/store/src/index.ts"],
       "@nx-homepage/ui": ["libs/ui/src/index.ts"],
-      "@nx-homepage/utilities": ["libs/utilities/src/index.ts"],
-      "@nx-homepage/wobo-auth": ["libs/wobo-auth/src/index.ts"]
+      "@nx-homepage/utilities": ["libs/utilities/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

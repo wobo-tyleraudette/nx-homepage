@@ -9,7 +9,6 @@
     "models": "libs/models",
     "store": "libs/store",
     "ui": "libs/ui",
-    "utilities": "libs/utilities",
-    "wobo-auth": "libs/wobo-auth"
+    "utilities": "libs/utilities"
   }
 }

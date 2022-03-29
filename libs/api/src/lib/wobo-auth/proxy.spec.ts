@@ -1,11 +1,11 @@
 import { WoboProxyInstance } from '@workboard/auth-proxy';
+import { startAuthServer } from './proxy';
 
 describe('Wobo Auth', () => {
-  jest.spyOn(WoboProxyInstance, 'init');
   jest.spyOn(WoboProxyInstance, 'start');
 
   it('should implement WoboProxyInstance', () => {
-    expect(WoboProxyInstance.init).toHaveBeenCalled();
+    startAuthServer();
     expect(WoboProxyInstance.start).toHaveBeenCalled();
   });
 });
