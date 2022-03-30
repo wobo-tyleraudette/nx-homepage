@@ -58,7 +58,6 @@ export class LoggingInterceptor implements NestInterceptor {
     const { method, url } = req;
     const { statusCode } = res;
     const message = `Outgoing response - ${statusCode} - ${method} - ${url}`;
-
     this.logger.info({
       message,
     });
@@ -72,6 +71,7 @@ export class LoggingInterceptor implements NestInterceptor {
   private logError(error: Error, context: ExecutionContext): void {
     const req: Request = context.switchToHttp().getRequest<Request>();
     const { method, url, body } = req;
+    console.log({ error });
     if (error instanceof HttpException) {
       const statusCode: number = error.getStatus();
       const message = `Outgoing response - ${statusCode} - ${method} - ${url}`;

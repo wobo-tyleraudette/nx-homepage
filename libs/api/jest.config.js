@@ -12,5 +12,5 @@ module.exports = {
   },
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
   coverageDirectory: '../../coverage/libs/api',
-  modulePathIgnorePatterns: ['./src/lib/core'],
+  modulePathIgnorePatterns: ['./src/lib/core/transform.interceptor.ts'],
 };
