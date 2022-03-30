@@ -20,10 +20,12 @@ WoboProxyInstance.init({
   mainRoutesPath: '',
   proxySecretHeader: '',
   proxySecret: '',
-  apiBaseUrl: process.env.NX_HOMEPAGE_API_URL,
-  encryptionSecret: '',
+  apiBaseUrl: process.env.NX_HOMEPAGE_API_URL, //NODEJS-CREDENTIAL-WB-INTERNAL-TOKEN
+  encryptionSecret: process.env.NX_ENCRYPTION_SECRET,
 });
 
 export const startAuthServer = () => {
   WoboProxyInstance.start();
 };
+
+// two seperate users who need to create integration callbacks - one points to squad dev - one points to local host
