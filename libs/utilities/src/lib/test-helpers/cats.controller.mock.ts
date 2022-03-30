@@ -31,4 +31,11 @@ export class CatsController {
   public internalerror(): string {
     throw new InternalServerErrorException();
   }
+  /**
+   * Fetching error
+   */
+  @Get('error')
+  public error(): string {
+    throw new Error('err');
+  }
 }

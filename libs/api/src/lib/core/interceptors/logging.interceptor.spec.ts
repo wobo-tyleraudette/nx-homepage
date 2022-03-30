@@ -126,4 +126,23 @@ describe('Logging interceptor', () => {
 
     expect(warnSpy).not.toHaveBeenCalled();
   });
+
+  it('logs non http errors', async () => {
+    const errorSpy: jest.SpyInstance = jest.spyOn(woboLogger, 'error');
+    const url = '/cats/error';
+
+    await request(app.getHttpServer()).get(url);
+
+    const outgoingMsg = `Outgoing response - GET - ${url}`;
+
+    expect(errorSpy).toBeCalledTimes(1);
+    expect(errorSpy.mock.calls[0]).toEqual([
+      expect.objectContaining({
+        error: {
+          message: outgoingMsg,
+        },
+        stack: expect.any(String),
+      }),
+    ]);
+  });
 });
