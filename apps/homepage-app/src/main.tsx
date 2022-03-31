@@ -10,8 +10,8 @@ ReactDOM.render(
     <BrowserRouter>
       <WoboAuthProvider
         config={{
-          proxyEndpoint: config.NX_PROXY_URI,
-          clientId: config.NX_CLIENT_ID,
+          proxyEndpoint: config.NX_AUTH_PROXY_URI,
+          clientId: config.NX_HOMEPAGE_APP_CLIENT_ID,
           authBaseEndpoint: config.NX_WB_BASE_URL,
         }}
       >

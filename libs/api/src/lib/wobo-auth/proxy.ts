@@ -3,7 +3,7 @@ import { WoboProxyInstance } from '@workboard/auth-proxy';
 WoboProxyInstance.init({
   port: Number(process.env.NX_NODE_PORT) || 4000,
   woboBaseUrl: process.env.NX_WB_BASE_URL,
-  sharedSecret: process.env.NX_SHARED_SECRET,
+  sharedSecret: process.env.NX_PROXY_SHARED_SECRET,
   allowOrigin: process.env.NX_HOMEPAGE_APP_URL,
   cookieOptions: {
     maxAge: 60 * 60 * 1000,
@@ -16,12 +16,12 @@ WoboProxyInstance.init({
     silent: false,
     isCloud: false,
   },
-  woboToken: process.env.NX_NODE_PROXY_TOKEN || '',
+  woboToken: process.env.NX_NODEJS_CREDENTIAL_WB_INTERNAL_TOKEN || '',
   mainRoutesPath: '',
   proxySecretHeader: '',
   proxySecret: '',
   apiBaseUrl: process.env.NX_HOMEPAGE_API_URL, //NODEJS-CREDENTIAL-WB-INTERNAL-TOKEN
-  encryptionSecret: process.env.NX_ENCRYPTION_SECRET,
+  encryptionSecret: process.env.NX_AUTH_ENCRYPTION_SECRET, 
 });
 
 export const startAuthServer = () => {
