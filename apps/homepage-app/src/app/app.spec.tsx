@@ -1,5 +1,4 @@
 import { render } from '@testing-library/react';
-
 import { BrowserRouter } from 'react-router-dom';
 
 import App from './app';
@@ -24,4 +23,21 @@ describe('App', () => {
 
     expect(getByText(/Welcome/gi)).toBeTruthy();
   });
+
+  // it('should call useAuthNavigation', () => {
+  //   const { baseElement } = render(
+  //     <BrowserRouter>
+  //     <WoboAuthProvider.default
+  //       config={{
+  //         proxyEndpoint: '',
+  //         clientId: '',
+  //         authBaseEndpoint: '',
+  //       }}>
+  //       <App />
+  //     </WoboAuthProvider.default>
+  //     </BrowserRouter>
+  //   );
+
+  //   expect(baseElement).toBeTruthy();
+  // });
 });

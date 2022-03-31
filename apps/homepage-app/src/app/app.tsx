@@ -10,7 +10,6 @@ import { WoboAuthUserContext, useAuthNavigation } from '@workboard/auth-ui';
 import { useContext, useEffect } from 'react';
 
 const App = () => {
-  console.log('--ap');
   const user = useContext(WoboAuthUserContext);
   console.log({ user });
   const [goToLogin] = useAuthNavigation();
