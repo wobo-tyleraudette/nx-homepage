@@ -1,6 +1,6 @@
 module.exports = {
-  displayName: 'models',
-  preset: '../../jest.preset-lib.js',
+  displayName: 'shared-interfaces',
+  preset: '../../../jest.preset.js',
   globals: {
     'ts-jest': {
       tsconfig: '<rootDir>/tsconfig.spec.json',
@@ -11,5 +11,5 @@ module.exports = {
     '^.+\\.[tj]sx?$': 'ts-jest',
   },
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
-  coverageDirectory: '../../coverage/libs/models',
+  coverageDirectory: '../../../coverage/libs/shared/interfaces',
 };

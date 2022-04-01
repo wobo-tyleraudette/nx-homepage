@@ -1,4 +1,5 @@
-import { IUser } from '@nx-homepage/models';
+import { IUser } from '@nx-homepage/shared-interfaces';
+
 import { UserService } from './user.service';
 import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { RootState } from '../homepage-app/homepage-app-state.interface';
