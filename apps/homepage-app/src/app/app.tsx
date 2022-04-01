@@ -3,7 +3,6 @@ import styles from './app.module.scss';
 import NxWelcome from './nx-welcome';
 
 import { Route, Link } from 'react-router-dom';
-import { User } from '@nx-homepage/ui';
 import { Provider } from 'react-redux';
 import { rootStore } from '@nx-homepage/store';
 import { WoboAuthUserContext, useAuthNavigation } from '@workboard/auth-ui';
@@ -11,7 +10,6 @@ import { useContext, useEffect } from 'react';
 
 const App = () => {
   const user = useContext(WoboAuthUserContext);
-  console.log({ user });
   const [goToLogin] = useAuthNavigation();
   useEffect(() => {
     if (!user) {
@@ -21,7 +19,7 @@ const App = () => {
 
   return (
     <Provider store={rootStore}>
-      <NxWelcome title="homepage-app" UserComponent={User} />
+      <NxWelcome title="homepage-app" />
       <div />
 
       {/* START: routes */}

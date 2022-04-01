@@ -9,7 +9,7 @@ export function NxWelcome({
   UserComponent,
 }: {
   title: string;
-  UserComponent: React.FunctionComponent;
+  UserComponent?: React.FunctionComponent;
 }) {
   return (
     <>
@@ -422,7 +422,7 @@ export function NxWelcome({
         <div className="container">
           <div id="hero" className="rounded">
             <div className="text-container">
-              <UserComponent />
+              Welcome!
             </div>
             <div className="logo-container">
               <svg
