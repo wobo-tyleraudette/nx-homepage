@@ -7,7 +7,7 @@ import { NestFactory } from '@nestjs/core';
 import { getSecrets, startAuthServer } from '@nx-homepage/homepage-api-api';
 import { AppModule } from './app/app.module';
 import { config } from './config/config';
-import { woboLogger } from '@nx-homepage/utilities-nonpub';
+import { woboLogger } from '@nx-homepage/shared-utils';
 
 async function bootstrap() {
   await getSecrets(config);

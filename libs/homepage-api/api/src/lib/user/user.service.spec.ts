@@ -2,7 +2,7 @@ import { HttpService, HttpModule } from '@nestjs/axios';
 import { Test, TestingModule } from '@nestjs/testing';
 import { of } from 'rxjs';
 import { UserService } from './user.service';
-import { mockAxios200 } from '@nx-homepage/utilities-nonpub';
+import { mockAxios200 } from '@nx-homepage/shared-utils';
 
 describe('UserService', () => {
   let service: UserService;

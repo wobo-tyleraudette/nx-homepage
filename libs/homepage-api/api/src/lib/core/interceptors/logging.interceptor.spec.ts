@@ -7,7 +7,7 @@ import {
 import { Test, TestingModule } from '@nestjs/testing';
 import * as request from 'supertest';
 import { CoreModule } from '../core.module';
-import { CatsModule, woboLogger } from '@nx-homepage/utilities-nonpub';
+import { CatsModule, woboLogger } from '@nx-homepage/shared-utils';
 
 describe('Logging interceptor', () => {
   let app: INestApplication;
