@@ -29,7 +29,7 @@
     "serve": {
       "executor": "@nrwl/node:node",
       "options": {
-        "buildTarget": "homepage-api:build"
+        "buildTarget": "homepage-homepage-api-api:build"
       }
     },
     "lint": {

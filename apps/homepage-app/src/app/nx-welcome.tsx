@@ -5,9 +5,9 @@
  Delete this file and get started with your project!
  * * * * * * * * * * * * * * * * * * * * * * * * * * * *
  */
-import { User } from '@nx-homepage/ui'
+import { User } from '@nx-homepage/homepage-app-ui';
 
-export function NxWelcome({title}: { title: string }) {
+export function NxWelcome({ title }: { title: string }) {
   return (
     <>
       <style

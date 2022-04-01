@@ -1,0 +1,23 @@
+{
+  "root": "libs/homepage-api/api",
+  "sourceRoot": "libs/homepage-api/api/src",
+  "projectType": "library",
+  "targets": {
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/homepage-api/api/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/homepage-api/api"],
+      "options": {
+        "jestConfig": "libs/homepage-api/api/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}

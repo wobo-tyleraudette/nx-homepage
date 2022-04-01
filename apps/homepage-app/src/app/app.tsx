@@ -4,7 +4,7 @@ import NxWelcome from './nx-welcome';
 
 import { Route, Link } from 'react-router-dom';
 import { Provider } from 'react-redux';
-import { rootStore } from '@nx-homepage/store';
+import { rootStore } from '@nx-homepage/homepage-app-store';
 import { WoboAuthUserContext, useAuthNavigation } from '@workboard/auth-ui';
 import { useContext, useEffect } from 'react';
 

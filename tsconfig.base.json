@@ -15,12 +15,14 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@nx-homepage/api": ["libs/api/src/index.ts"],
-      "@nx-homepage/data": ["libs/data/src/index.ts"],
+      "@nx-homepage/homepage-api-api": ["libs/homepage-api/api/src/index.ts"],
+      "@nx-homepage/homepage-api-data": ["libs/homepage-api/data/src/index.ts"],
+      "@nx-homepage/homepage-app-store": [
+        "libs/homepage-app/store/src/index.ts"
+      ],
+      "@nx-homepage/homepage-app-ui": ["libs/homepage-app/ui/src/index.ts"],
       "@nx-homepage/models": ["libs/models/src/index.ts"],
-      "@nx-homepage/store": ["libs/store/src/index.ts"],
-      "@nx-homepage/ui": ["libs/ui/src/index.ts"],
-      "@nx-homepage/utilities": ["libs/utilities/src/index.ts"]
+      "@nx-homepage/utilities-nonpub": ["libs/utilities-nonpub/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
