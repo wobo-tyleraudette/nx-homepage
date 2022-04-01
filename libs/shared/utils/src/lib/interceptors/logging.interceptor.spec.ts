@@ -6,15 +6,17 @@ import {
 } from '@nestjs/common';
 import { Test, TestingModule } from '@nestjs/testing';
 import * as request from 'supertest';
-import { CoreModule } from '../core.module';
-import { CatsModule, woboLogger } from '@nx-homepage/shared-utils';
+import { CatsModule, TestModule } from '../test-helpers';
+import { woboLogger } from '../wobo-logger';
+
+jest.mock('@workboard/auth-proxy');
 
 describe('Logging interceptor', () => {
   let app: INestApplication;
 
   beforeAll(async () => {
     const moduleRef: TestingModule = await Test.createTestingModule({
-      imports: [CoreModule, CatsModule],
+      imports: [TestModule, CatsModule],
     }).compile();
 
     app = moduleRef.createNestApplication();

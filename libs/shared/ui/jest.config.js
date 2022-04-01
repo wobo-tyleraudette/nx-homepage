@@ -1,6 +1,6 @@
 module.exports = {
   displayName: 'shared-ui',
-  preset: '../../../jest.preset.js',
+  preset: '../../../jest.preset-lib.js',
   transform: {
     '^.+\\.[tj]sx?$': 'babel-jest',
   },
