@@ -22,4 +22,4 @@ ReactDOM.render(
   document.getElementById('root')
 );
 
-console.log(JSON.stringify(config, null, 2));
+

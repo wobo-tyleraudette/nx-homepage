@@ -16,7 +16,7 @@ WoboProxyInstance.init({
     silent: false,
     isCloud: false,
   },
-  woboToken: process.env.NX_NODEJS_CREDENTIAL_WB_INTERNAL_TOKEN || '',
+  woboToken: process.env.NX_NODEJS_CREDENTIAL_WB_INTERNAL_TOKEN,
   mainRoutesPath: '',
   proxySecretHeader: '',
   proxySecret: '',

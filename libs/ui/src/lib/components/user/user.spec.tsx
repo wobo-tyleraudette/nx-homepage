@@ -14,7 +14,6 @@ describe('User', () => {
 
   it('should match snapshot', () => {
     const component = renderer.create(<User />).toJSON();
-    console.log(component);
     expect(component).toMatchSnapshot();
   });
 });
