@@ -5,12 +5,9 @@
  Delete this file and get started with your project!
  * * * * * * * * * * * * * * * * * * * * * * * * * * * *
  */
-export function NxWelcome({
-  UserComponent,
-}: {
-  title: string;
-  UserComponent: React.FunctionComponent;
-}) {
+import { User } from '@nx-homepage/ui'
+
+export function NxWelcome({title}: { title: string }) {
   return (
     <>
       <style
@@ -422,7 +419,8 @@ export function NxWelcome({
         <div className="container">
           <div id="hero" className="rounded">
             <div className="text-container">
-              <UserComponent />
+              {title}
+              <User />
             </div>
             <div className="logo-container">
               <svg

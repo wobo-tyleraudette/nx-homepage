@@ -1,16 +1,7 @@
-import { userActions } from '@nx-homepage/store';
-import { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { userSelectors } from '@nx-homepage/store';
-import { IUser } from '@nx-homepage/models';
+import { useContext } from 'react';
+import { WoboAuthUserContext } from '@workboard/auth-ui';
 
 export function User() {
-  const user: IUser | undefined = useSelector(userSelectors.getUser);
-
-  const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(userActions.fetchUser());
-  }, [dispatch]);
-
-  return <h1 className="test-class">Welcome {user?.name}</h1>;
+  const user = useContext(WoboAuthUserContext);
+  return <h1 className="test-class">Welcome {user?.firstName}</h1>;
 }

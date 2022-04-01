@@ -5,6 +5,5 @@ exports[`User should match snapshot 1`] = `
   className="test-class"
 >
   Welcome 
-  test name
 </h1>
 `;

@@ -17,12 +17,12 @@ services:
         BUILD_FLAG: ''
     image: homepage-api:nx-dev
     ports:
-      - 4939:4939
+      - 4940:4940
     environment:
       NODE_ENV: 'development'
-      PORT: 4939
-      NX_HOMEPAGE_APP_URL: http://localhost:4200
-      NX_HOMEPAGE_API_URL: http://localhost:4939
+      PORT: 4940
+      NX_HOMEPAGE_APP_URL: http://localhost:3005
+      NX_HOMEPAGE_API_URL: http://localhost:4940
       NX_AZURE_KV_NAME: kv-sandbox-vnext-dt-wus
       WB_API_URL: url
       NX_MANAGED_IDENTITY_CLIENT_ID: '58b8ed09-7042-46e2-b783-75c9babfc5f1'
@@ -42,12 +42,12 @@ services:
         BUILD_FLAG: ''
     image: homepage-app:nx-dev
     ports:
-      - 4200:80
+      - 3005:80
     environment:
       NODE_ENV: 'development'
-      PORT: 4200
-      NX_HOMEPAGE_APP_URL: http://localhost:4200
-      NX_HOMEPAGE_API_URL: http://localhost:4939
+      PORT: 3005
+      NX_HOMEPAGE_APP_URL: http://localhost:3005
+      NX_HOMEPAGE_API_URL: http://localhost:4940
       NX_AZURE_KV_NAME: kv-sandbox-vnext-dt-wus
       WB_API_URL: url
       NX_MANAGED_IDENTITY_CLIENT_ID: '58b8ed09-7042-46e2-b783-75c9babfc5f1'

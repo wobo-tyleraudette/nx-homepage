@@ -2,7 +2,6 @@ const nxPreset = require('@nrwl/jest/preset');
 
 module.exports = {
   ...nxPreset,
-  collectCoverageFrom: ['<rootDir>/src/lib/**/*.{js,jsx,ts,tsx}'],
   coveragePathIgnorePatterns: [
     'index.ts',
     '.module.ts',
@@ -17,4 +16,7 @@ module.exports = {
       statements: 100,
     },
   },
+  transformIgnorePatterns: [
+    "<rootDir>/node_modules/(?!@workboard-auth-ui/dist/.*)"
+  ],
 };
