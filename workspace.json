@@ -9,6 +9,8 @@
     "homepage-app-store": "libs/homepage-app/store",
     "homepage-app-ui": "libs/homepage-app/ui",
     "models": "libs/models",
+    "shared-ui": "libs/shared/ui",
+    "shared-utils": "libs/shared/utils",
     "utilities-nonpub": "libs/utilities-nonpub"
   }
 }

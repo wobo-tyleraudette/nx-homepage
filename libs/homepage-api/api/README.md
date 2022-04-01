@@ -5,7 +5,7 @@
 This application is built using [nestjs modules](https://docs.nestjs.com/modules)
 
 - Each app has a single `app.module.ts` file where it's dependencies are injected
-- All other modules live under `libs/homepage-api-api` for external requests & `libs/data` for db queries.
+- All other modules live under `libs/homepage-api` for external requests & `libs/data` for db queries.
 - The @Module() decorator takes a single object whose properties describe the module:
 
   1. Providers: the providers that will be instantiated by the Nest injector and that may be shared at least across this module
@@ -18,7 +18,7 @@ This application is built using [nestjs modules](https://docs.nestjs.com/modules
 ```
 import { Module } from '@nestjs/common';
 import { HttpModule } from '@nestjs/axios';
-import { UserModule, CoreModule } from '@nx-homepage/homepage-api-api';
+import { UserModule, CoreModule } from '@nx-homepage/homepage-api';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 

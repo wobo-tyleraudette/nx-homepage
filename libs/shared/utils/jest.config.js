@@ -1,6 +1,6 @@
 module.exports = {
-  displayName: 'homepage-api',
-  preset: '../../../jest.preset-lib.js',
+  displayName: 'shared-utils',
+  preset: '../../../jest.preset.js',
   globals: {
     'ts-jest': {
       tsconfig: '<rootDir>/tsconfig.spec.json',
@@ -11,6 +11,5 @@ module.exports = {
     '^.+\\.[tj]sx?$': 'ts-jest',
   },
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
-  coverageDirectory: '../../../coverage/libs/homepage-api/api',
-  modulePathIgnorePatterns: ['./src/lib/core/transform.interceptor.ts'],
+  coverageDirectory: '../../../coverage/libs/shared/utils',
 };
