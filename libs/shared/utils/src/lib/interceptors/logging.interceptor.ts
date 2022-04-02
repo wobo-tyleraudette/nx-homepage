@@ -9,7 +9,7 @@ import {
 import { Request, Response } from 'express';
 import { Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
-import { woboLogger } from '@nx-homepage/shared-utils';
+import { woboLogger } from '../wobo-logger';
 import { ILogger } from '@workboard/wobo-logger';
 
 /**
