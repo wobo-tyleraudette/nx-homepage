@@ -6,4 +6,7 @@ module.exports = {
   },
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
   coverageDirectory: '../../../coverage/libs/shared/ui',
+  // transformIgnorePatterns: [
+  //   '../../../node_modules/(?!@workboard-auth-ui/dist/.*)',
+  // ],
 };

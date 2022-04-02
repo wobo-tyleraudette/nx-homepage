@@ -7,4 +7,7 @@ module.exports = {
   },
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
   coverageDirectory: '../../coverage/apps/homepage-app',
+  transformIgnorePatterns: [
+    '<rootDir>/node_modules/(?!@workboard-auth-ui/dist/.*)',
+  ],
 };
