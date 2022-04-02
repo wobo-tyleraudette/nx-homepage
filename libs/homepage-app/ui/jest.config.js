@@ -2,7 +2,7 @@ module.exports = {
   displayName: 'homepage-app-ui',
   preset: '../../../jest.preset-lib.js',
   transform: {
-    '^.+\\.[tj]sx?$': 'babel-jest',
+    '^.+\\.[tj]sx?$': ['babel-jest', { cwd: __dirname }],
   },
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
   coverageDirectory: '../../../coverage/libs/homepage-app/ui',
