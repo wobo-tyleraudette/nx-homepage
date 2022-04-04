@@ -1,14 +1,15 @@
 {
   "version": 2,
   "projects": {
-    "api": "libs/api",
-    "data": "libs/data",
     "homepage-api": "apps/homepage-api",
+    "homepage-api-api": "libs/homepage-api/api",
+    "homepage-api-data": "libs/homepage-api/data",
     "homepage-app": "apps/homepage-app",
     "homepage-app-e2e": "apps/homepage-app-e2e",
-    "models": "libs/models",
-    "store": "libs/store",
-    "ui": "libs/ui",
-    "utilities": "libs/utilities"
+    "homepage-app-store": "libs/homepage-app/store",
+    "homepage-app-ui": "libs/homepage-app/ui",
+    "shared-interfaces": "libs/shared/interfaces",
+    "shared-ui": "libs/shared/ui",
+    "shared-utils": "libs/shared/utils"
   }
 }

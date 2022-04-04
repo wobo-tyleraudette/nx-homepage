@@ -4,10 +4,10 @@
  */
 
 import { NestFactory } from '@nestjs/core';
-import { getSecrets, startAuthServer } from '@nx-homepage/api';
+import { getSecrets, startAuthServer } from '@nx-homepage/shared-utils';
 import { AppModule } from './app/app.module';
 import { config } from './config/config';
-import { woboLogger } from '@nx-homepage/utilities';
+import { woboLogger } from '@nx-homepage/shared-utils';
 
 async function bootstrap() {
   await getSecrets(config);
