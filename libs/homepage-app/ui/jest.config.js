@@ -1,12 +1,13 @@
+const uiPresets = require('../../../jest/jest.preset-ui.js');
+
 module.exports = {
   displayName: 'homepage-app-ui',
-  preset: '../../../jest.preset-lib.js',
+  preset: '../../../jest/jest.preset-lib.js',
   transform: {
+    '^(?!.*\\.(js|jsx|ts|tsx|css|json)$)': '@nrwl/react/plugins/jest',
     '^.+\\.[tj]sx?$': ['babel-jest', { cwd: __dirname }],
   },
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
   coverageDirectory: '../../../coverage/libs/homepage-app/ui',
-  transformIgnorePatterns: [
-    '<rootDir>/node_modules/(?!@workboard-auth-ui/dist/.*)',
-  ],
+  transformIgnorePatterns: uiPresets.transforms,
 };

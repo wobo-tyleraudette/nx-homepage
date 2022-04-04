@@ -16,7 +16,4 @@ module.exports = {
       statements: 100,
     },
   },
-  // transformIgnorePatterns: [
-  //   '<rootDir>/node_modules/(?!@workboard-auth-ui/dist/.*)',
-  // ],
 };

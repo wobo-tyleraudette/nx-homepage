@@ -1,6 +1,6 @@
 module.exports = {
   displayName: 'homepage-api',
-  preset: '../../jest.preset-app.js',
+  preset: '../../jest/jest.preset-app.js',
   globals: {
     'ts-jest': {
       tsconfig: '<rootDir>/tsconfig.spec.json',
