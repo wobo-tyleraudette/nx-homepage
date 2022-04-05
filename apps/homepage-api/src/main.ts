@@ -22,6 +22,7 @@ async function bootstrap() {
   woboLogger.info(
     `🚀 Application is running on: http://localhost:${port}/${globalPrefix}`
   );
+  woboLogger.info('hotfix test commit');
   startAuthServer();
 }
 
