@@ -21,5 +21,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
       - name: Build the base Docker image
         run: docker build . --file Dockerfile --tag base-image:$(date +%s)
