@@ -1,28 +1,40 @@
-name: test actions
+name: CI
 on:
-  # schedule:
-  #   - cron: '39 21 * * *'
   push:
-    branches: [main]
-    # Publish server tags as releases.
-    tags: ['*.*.*']
+    branches:
+      - main
   pull_request:
-    branches: [main]
-
-env:
-  # Use docker.io for Docker Hub if empty
-  REGISTRY: ghcr.io
-  # github.repository as <account>/<repo>
-  IMAGE_NAME: ${{ github.repository }}
 
 jobs:
-  build-base-image:
+  main:
     runs-on: ubuntu-latest
-    name: Build Test Image
+    if: ${{ github.event_name != 'pull_request' }}
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v1
-      - name: Build and export to Docker
-        uses: docker/build-push-action@v2
+      - uses: actions/checkout@v2
+        name: Checkout [main]
+        with:
+          fetch-depth: 0
+      - name: Derive appropriate SHAs for base and head for `nx affected` commands
+        uses: nrwl/nx-set-shas@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '16'
+      - run: npm install
+      - run: npx nx affected --target=build --parallel=3
+      - run: npx nx affected --target=test --parallel=2
+  pr:
+    runs-on: ubuntu-latest
+    if: ${{ github.event_name == 'pull_request' }}
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          ref: ${{ github.event.pull_request.head.ref }}
+          fetch-depth: 0
+      - name: Derive appropriate SHAs for base and head for `nx affected` commands
+        uses: nrwl/nx-set-shas@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '16'
+      - run: npm install
+      - run: npx nx affected --target=build --parallel=3
+      - run: npx nx affected --target=test --parallel=2
