@@ -4,7 +4,7 @@ on:
   #   - cron: '39 21 * * *'
   push:
     branches: [main]
-    # Publish semver tags as releases.
+    # Publish server tags as releases.
     tags: ['*.*.*']
   pull_request:
     branches: [main]
@@ -16,28 +16,10 @@ env:
   IMAGE_NAME: ${{ github.repository }}
 
 jobs:
-  build-test-image:
+  build:
     runs-on: ubuntu-latest
-    name: Build Test Image
+
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v1
-      - name: Build and export to Docker
-        uses: docker/build-push-action@v2
-        with:
-          context: .
-          target: deployment
-          build-args: |
-            environment=dev
-          load: true
-          cache-from: type=local,src=/tmp/.buildx-cache
-          cache-to: type=local,mode=max,dest=/tmp/.buildx-cache
-          tags: ${{ env.PHP_TEST_IMAGE_NAME }}
-          outputs: type=docker,dest=/tmp/testimage.tar
-      - name: Upload artifact
-        uses: actions/upload-artifact@v2
-        with:
-          name: testimage
-          path: /tmp/testimage.tar
+      - uses: actions/checkout@v3
+      - name: Build the base Docker image
+        run: docker build . --file Dockerfile --tag base image:$(date +%s)
