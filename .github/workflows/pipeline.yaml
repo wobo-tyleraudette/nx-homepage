@@ -32,12 +32,3 @@ jobs:
           build-args: |
             environment=dev
           load: true
-          cache-from: type=local,src=/tmp/.buildx-cache
-          cache-to: type=local,mode=max,dest=/tmp/.buildx-cache
-          tags: ${{ env.PHP_TEST_IMAGE_NAME }}
-          outputs: type=docker,dest=/tmp/testimage.tar
-      - name: Upload artifact
-        uses: actions/upload-artifact@v2
-        with:
-          name: testimage
-          path: /tmp/testimage.tar
